@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+}
+
+ul, ol {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.header {
+  background: linear-gradient(92.33deg, #087990 0.12%, #055160 100%);
+}
+.header__wrapper {
+  padding: 68px 0 100px;
+}
+.header__title {
+  font-family: Inter;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 87px;
+  color: rgb(207, 244, 252);
+  text-align: center;
+  margin-bottom: 4px;
+}
+.header__subtitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 36px;
+  color: #CFF4FC;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
