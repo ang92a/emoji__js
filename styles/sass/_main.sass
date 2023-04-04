@@ -1,5 +1,6 @@
 .main
     background: #EDEEF3
+    flex: 1 0 auto
 
     &__wrapper
         padding: 80px 0 47px
@@ -19,6 +20,11 @@
         margin: -112px auto 47px
         padding-left: 32px
 
+#cards
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
 .article
     height: 184px
     width: 316px
@@ -30,10 +36,14 @@
     flex-wrap: wrap
     align-items: center
     padding: 24px
+    margin-bottom: 20px
 
     &__img
-        height: 48px
-        width: 48px
+        font-family: Inter
+        font-size: 48px
+        font-weight: 400
+        line-height: 48px
+
 
     &__title
         font-family: 'Inter'
