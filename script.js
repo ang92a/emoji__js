@@ -1,12 +1,10 @@
 import { data } from "./emoji.js";
 
-data.forEach(createCard);
+let newData = data.map(function (obj) {
+  return { ...obj, keywords: [...new Set(obj.keywords.split(" "))].join(" ") };
+});
 
-let obj = {
-  symbol: "💯",
-  title: "100",
-  keywords: "Hundred, points, symbol, wow, win, perfect, parties",
-};
+let cards = document.getElementById("cards");
 
 function createCard(obj) {
   let article = document.createElement("div");
@@ -25,7 +23,28 @@ function createCard(obj) {
   articleSubtitle.setAttribute("class", "article__subtitle");
 
   article.append(articleImg, articleTitle, articleSubtitle);
-  document.getElementById("cards").append(article);
+  cards.append(article);
 }
 
-createCard(obj);
+function showCards(arr) {
+  arr.forEach(createCard);
+}
+
+(function main() {
+  showCards(newData);
+})();
+
+//ПОИСК
+
+// 1. Подписать элемент на событие
+
+let input = document.querySelector(".main__input");
+input.addEventListener("input", searchData);
+
+// 2. Назначить функцию
+
+function searchData() {
+  let result = newData.filter((obj) => obj.title.includes(input.value));
+  cards.innerHTML = "";
+  showCards(result);
+}
